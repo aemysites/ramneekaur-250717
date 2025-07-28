@@ -2,7 +2,6 @@
   border: 1px solid #dadada;
 }
 
-/* stylelint-disable-next-line no-descending-specificity */
 .accordion details + details {
   margin-top: 24px;
 }
@@ -55,7 +54,99 @@
   padding: 0 16px;
 }
 
+.accordion.accordion33 .accordion-item-body {
+  padding: 0 14px 13px;
+  font-size: 16px;
+  color: #222;
+  font-family: var(--body-font-family, sans-serif);
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
 .accordion details[open] .accordion-item-body {
   border-top: 1px solid #dadada;
   background-color: var(--background-color);
+}
+
+.accordion.accordion33 {
+  background: #f9f9f6;
+  padding: 0;
+  max-width: 100%;
+  border-radius: 0;
+  border: none;
+}
+
+.accordion.accordion33 details {
+  display: block;
+  border: none;
+  margin: 0;
+  background: none;
+}
+
+.accordion.accordion33 details + details {
+  margin-top: 0;
+}
+
+.accordion.accordion33 summary.accordion-item-label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 14px;
+
+  /* slightly reduced for closer edge alignment */
+  border-bottom: 1px solid #e0e0e0;
+  cursor: pointer;
+  outline: none;
+  background: none;
+  font-family: var(--body-font-family, sans-serif);
+  font-size: 16px;
+  color: #222;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.35;
+  min-height: 40px;
+  box-sizing: border-box;
+  transition: background 0.15s;
+}
+
+.accordion.accordion33 details:last-child summary.accordion-item-label {
+  border-bottom: none;
+}
+
+/* Remove default marker for cross-browser consistency */
+.accordion.accordion33 summary.accordion-item-label::-webkit-details-marker,
+.accordion.accordion33 summary.accordion-item-label::marker {
+  display: none;
+}
+
+/* Attempt to increase native chevron/marker size in webkit browsers */
+.accordion.accordion33 summary.accordion-item-label::-webkit-details-marker {
+  font-size: 20px;
+}
+
+/* Row text styling and alignment */
+.accordion.accordion33 summary.accordion-item-label p {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  font-weight: inherit;
+  flex: 1 1 auto;
+  min-width: 0;
+  line-height: 1.35;
+}
+
+.accordion.accordion33 details[open] summary.accordion-item-label,
+.accordion.accordion33 details[open] .accordion-item-body {
+  background: none;
+  border-top: none;
+}
+
+@media (width <= 700px) {
+  .accordion.accordion33 summary.accordion-item-label,
+  .accordion.accordion33 .accordion-item-body {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
 }
